@@ -9,6 +9,14 @@ terraform {
       version = "~> 4.16"
     }
   }
+
+    backend "s3" {
+    bucket         = "tf-s3-state-32434523544"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "tf_dynmodb_state_lock"
+    encrypt        = true
+  }
 }
 
 data "aws_ami" "amazon_linux" {

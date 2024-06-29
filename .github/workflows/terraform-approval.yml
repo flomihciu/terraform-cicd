@@ -38,7 +38,7 @@ jobs:
 
     - name: Manual Approval
       id: approval
-      if: github.event_name == 'push'
+      if: github.event_name == 'pull_request'
       uses: trstringer/manual-approval@v1
       with:
         secret: ${{ github.TOKEN }}

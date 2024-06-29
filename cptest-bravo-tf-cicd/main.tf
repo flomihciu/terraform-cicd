@@ -38,7 +38,7 @@ resource "aws_instance" "appserver" {
 # Define the security group for public subnet
 resource "aws_security_group" "ec2OneSG" {
   name        = "ec2sg-test_web"
-  description = "Allow incoming HTTP connections & SSH access"
+  description = "Allow incoming HTTP connections & SSH access from public"
 
   ingress {
     from_port   = 80

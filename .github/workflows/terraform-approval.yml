@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   terraform:
@@ -41,7 +38,7 @@ jobs:
 
     - name: Manual Approval
       id: approval
-      if: github.event_name == 'pull_request'
+      if: github.event_name == 'push'
       uses: trstringer/manual-approval@v1
       with:
         secret: ${{ github.GH_TOKEN }}

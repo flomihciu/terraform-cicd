@@ -41,7 +41,7 @@ jobs:
       if: github.event_name == 'push'
       uses: trstringer/manual-approval@v1
       with:
-        secret: ${{ github.GH_TOKEN }}
+        secret: ${{ github.TOKEN }}
         approvers: chandradeoarya
         minimum-approvals: 1
         issue-title: "Deploying new infra to test using tf"

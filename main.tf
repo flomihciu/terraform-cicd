@@ -11,16 +11,16 @@ terraform {
   }
 
     backend "s3" {
-    bucket         = "tf-s3-state-32434523544"
+    bucket         = "tf-s3-state-3243451"
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "tf_dynmodb_state_lock"
+    dynamodb_table = "tf_dynamodb_state_lock"
     encrypt        = true
   }
 }
 
 resource "aws_s3_bucket" "tf_s3_cicd" {
-  bucket = "chandra-tf-cicd-bucket-testing-approval"  # Replace with your desired bucket name
+  bucket = "chandra-tf-cicd-bucket-testing-master-pulltesting"  # Replace with your desired bucket name
   tags = {
     "name" = "tfcicd-bucket",
     "team" = "devops"

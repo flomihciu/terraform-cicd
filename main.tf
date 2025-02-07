@@ -20,7 +20,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "tf_s3_cicd" {
-  bucket = "chandra-tf-cicd-bucket-testing-chandra-branch-remove-backend"  # Replace with your desired bucket name
+  bucket = "chandra-tf-cicd-bucket-testing-chandra"  # Replace with your desired bucket name
   tags = {
     "name" = "tfcicd-bucket",
     "team" = "devops"

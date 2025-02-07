@@ -38,16 +38,15 @@ jobs:
 
     - name: Manual Approval
       id: approval
-      if: github.event_name == 'pull_request'
       uses: trstringer/manual-approval@v1
       with:
-        secret: ${{ github.TOKEN }}
-        approvers: chandradeoarya
+        secret: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
+        approvers: "chandradeoarya"
         minimum-approvals: 1
         issue-title: "Deploying new infra to test using tf"
         issue-body: "Please approve or deny the deployment of latest tf apply."
         exclude-workflow-initiator-as-approver: false
-        additional-approved-words: ''
+        additional-approved-words: 'yes'
         additional-denied-words: ''
         
     - name: Terraform Apply

@@ -10,17 +10,17 @@ terraform {
     }
   }
 
-    backend "s3" {
-    bucket         = "tf-s3-state-32434523544"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "tf_dynmodb_state_lock"
-    encrypt        = true
-  }
+  #   backend "s3" {
+  #   bucket         = "tf-s3-state-32434523544"
+  #   key            = "terraform.tfstate"
+  #   region         = "us-east-1"
+  #   dynamodb_table = "tf_dynmodb_state_lock"
+  #   encrypt        = true
+  # }
 }
 
 resource "aws_s3_bucket" "tf_s3_cicd" {
-  bucket = "chandra-tf-cicd-bucket-testing-approval"  # Replace with your desired bucket name
+  bucket = "chandra-tf-cicd-bucket-testing-test-9876"  # Replace with your desired bucket name
   tags = {
     "name" = "tfcicd-bucket",
     "team" = "devops"
